@@ -67,9 +67,22 @@ public class DANI extends PApplet {
 	String line;
 	String w;
 
-	public String[] writeSonnet() {
-		return null;
+	// Write a method called writeSonnet() that returns a 14 line sonnet
+	public String writeSonnet(String str) {
+		String sonnet2 = "";
+		for (int i = 0; i < 14; i++) {
+			line = sonnet[i];
+			String[] words = split(line, " ");
+			for (int j = 0; j < words.length; j++) {
+				w = words[j];
+				w = w.replaceAll("[^\\w\\s]", "");
+				w.toLowerCase();
+				sonnet2 += w + " ";
+			}
+		}
+		return sonnet2;
 	}
+
 
 	public void setup() {
 		colorMode(HSB);
