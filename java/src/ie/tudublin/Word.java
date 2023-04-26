@@ -31,7 +31,11 @@ public class Word {
 
     @Override
     public String toString() {
-        return "Word [word=" + word + ", follows=" + follows + "]";
+        String s = word + " follows: ";
+        for (Follow f : follows) {
+            s += f.getWord() + " (" + f.getCount() + "), ";
+        }
+        return s;
     }
 
 }
