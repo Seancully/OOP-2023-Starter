@@ -41,10 +41,25 @@ public class DANI extends PApplet {
 		return w;
 	}
 
-	
+	// Write a method called printModel() that prints the model for the included text file small.txt to the screen
+	public void printModel() {
+		for (int i = 0; i < 14; i++) {
+			line = sonnet[i];
+			String[] words = split(line, " ");
+			for (int j = 0; j < words.length; j++) {
+				w = words[j];
+				w = w.replaceAll("[^\\w\\s]", "");
+				w.toLowerCase();
+				System.out.println(w);
+			}
+		}
+	}
 
 	public void settings() {
 		size(1000, 1000);
+		//loadFile();
+		// findWord("the");
+		//printModel();
 		// fullScreen(SPAN);
 	}
 
