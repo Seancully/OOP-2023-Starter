@@ -32,10 +32,28 @@ public class Word {
     @Override
     public String toString() {
         String s = word + " follows: ";
+
+
         for (Follow f : follows) {
             s += f.getWord() + " (" + f.getCount() + "), ";
         }
         return s;
     }
+
+    // Write a method called findFollow(str)
+    public Object findFollow(String str) {
+        for (Follow f : follows) {
+            if (f.getWord().equals(str)) {
+                f.setCount(f.getCount() + 1);
+                return f;
+            }
+            else return null;
+        }
+        
+        Follow f = new Follow(str, 1);
+        return follows.add(f);
+    }
+
+    
 
 }
