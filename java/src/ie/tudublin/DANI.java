@@ -57,9 +57,13 @@ public class DANI extends PApplet {
 
 	public void settings() {
 		size(1000, 1000);
-		//loadFile();
-		// findWord("the");
-		//printModel();
+		loadFile();
+		findWord("the");
+		printModel();
+		writeSonnet(w);
+		printSonnet();
+		printSonnet2();
+		draw();
 		// fullScreen(SPAN);
 	}
 
@@ -83,14 +87,27 @@ public class DANI extends PApplet {
 		return sonnet2;
 	}
 
+	// Write a method that prints sonnet from writeSonnet() method to the console output
+	public void printSonnet() {
+		System.out.println(writeSonnet("sonnet"));
+	}
+
+	// Write a method that prints sonnet from writeSonnet() method to the screen
+	public void printSonnet2() {
+		text(writeSonnet("sonnet"), 500, 500);
+	}
+
 
 	public void setup() {
 		colorMode(HSB);
 
 	}
 
+	// add a method that generates code on a space bar keypress
 	public void keyPressed() {
-
+		if (key == ' ') {
+			off = random(0, 100);
+		}
 	}
 
 	float off = 0;
